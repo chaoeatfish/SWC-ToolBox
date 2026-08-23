@@ -8,10 +8,31 @@ export interface DitchRecord {
   id: string;
   name: string;
 
+  // Cp 计算参数
+  cpRegion: string;        // 气候区 key
+  cpReturnPeriod: string;  // 重现期（年）
+
+  // Ct 计算参数 — 坡面汇流
+  m1SurfaceType: string;   // 地表类型 index（对应 M1_ROUGHNESS_TABLE）
+  m1: string;              // 地面粗度系数（自动填入，可覆盖）
+  slopeFlowLength: string; // Ls 坡面流长度 (m)
+  slopeFlowGradient: string; // is 坡面流坡降（小数）
+
+  // Ct 计算参数 — 沟道汇流
+  conduitLength: string;   // L 沟（管）段长度 (m)
+  conduitSlope: string;    // ig 沟（管）段平均坡度
+
+  // Ct 计算参数 — C60
+  C60: string;             // 60min雨力参数
+
   // 暴雨强度参数
   q5_10: string;
   Cp: string;
   Ct: string;
+
+  // 手动覆盖标记（true = 用户手动编辑过，不再自动覆盖）
+  cpManualOverride: boolean;
+  ctManualOverride: boolean;
 
   // 汇水区域
   catchArea: string;
@@ -33,6 +54,7 @@ export interface DitchRecord {
   wallThickness: string;
   baseThickness: string;
   roughness: string;
+  roughnessCategory: string; // index into ROUGHNESS_CATEGORY_OPTIONS
   backfillCoeff: string;
 }
 
@@ -40,7 +62,11 @@ export function createDitch(name: string): DitchRecord {
   return {
     id: crypto.randomUUID(),
     name,
+    cpRegion: "south", cpReturnPeriod: "5",
+    m1SurfaceType: "2", m1: "0.20", slopeFlowLength: "", slopeFlowGradient: "",
+    conduitLength: "", conduitSlope: "", C60: "",
     q5_10: "2.2", Cp: "1.0", Ct: "1.0",
+    cpManualOverride: false, ctManualOverride: false,
     catchArea: "", areaUnit: "km2", phi: "0.50",
     ditchSlope: "0.003",
     sectionType: "trapezoidal",
@@ -48,12 +74,22 @@ export function createDitch(name: string): DitchRecord {
     freeboard: "0.20",
     masonryType: "masonry_stone",
     wallThickness: "0.30", baseThickness: "0.15",
-    roughness: "0.025", backfillCoeff: "1.10",
+    roughness: "0.025", roughnessCategory: "5", backfillCoeff: "1.10",
   };
 }
 
 // ── 计算结果（不含输入参数，纯输出） ──────────────────────────
 export interface DitchResult {
+  // Cp / Ct 推荐值
+  cpRecommended: number;
+  ctRecommended: number;
+
+  // 汇流历时
+  t1: number;          // 坡面汇流历时 (min)
+  t2: number;          // 沟道汇流历时 (min)
+  t: number;           // 总汇流历时 (min)
+  conduitV: number;    // 沟道平均流速估算 (m/s)
+
   q: number;           // 暴雨强度 mm/min
   Qm: number;          // 设计洪峰流量 m³/s
 
@@ -79,10 +115,16 @@ export interface DitchResult {
 // ── 存储 ──────────────────────────────────────────────────────
 const STORAGE_KEY = "swc-hydraulic-ditches";
 
+function migrateDitch(raw: Record<string, unknown>): DitchRecord {
+  const defaults = createDitch("");
+  return { ...defaults, ...raw } as DitchRecord;
+}
+
 export function loadDitches(): DitchRecord[] {
   if (typeof window === "undefined") return [];
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    const arr = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]") as Record<string, unknown>[];
+    return arr.map(migrateDitch);
   } catch { return []; }
 }
 
