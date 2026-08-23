@@ -1,0 +1,9 @@
+# Ignore everything at root
+*
+
+# Only track swc-app
+!swc-app/
+!swc-app/**
+!.gitignore
+
+# swc-app internal ignores are in swc-app/.gitignore
