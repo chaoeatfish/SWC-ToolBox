@@ -1,6 +1,6 @@
-# SWC Toolbox - 水土保持报告编制工具箱
+# SWC-ToolBox — 水土保持工具箱
 
-供个人使用的水土保持报告编制工具箱，基于 Next.js 16 + React 19 + Tailwind CSS 4 构建，后续将通过 Tauri 2 打包为桌面应用。
+供个人使用的水土保持报告编制工具箱，基于 Next.js 16 + React 19 + Tailwind CSS 4 构建，通过 Tauri 2 打包为桌面应用。
 
 ## 技术栈
 
@@ -14,6 +14,7 @@
 ## 启动
 
 ```bash
+cd swc-app
 pnpm install
 pnpm dev
 ```
@@ -76,28 +77,39 @@ pnpm dev
 ## 项目结构
 
 ```
-src/
-├── app/
-│   ├── page.tsx                    # 工作台首页
-│   ├── layout.tsx                  # 全局布局（侧边栏 + 主内容区）
-│   ├── globals.css                 # 全局样式 + CSS 变量
-│   ├── project-profile/            # 项目建设特性表
-│   ├── progress/                   # 进度图（甘特图）
-│   ├── hydraulic-calc/             # 水力计算
-│   ├── erision-calc/               # 流失量计算
-│   ├── indicator-compare/          # 指标对比分析
-│   ├── measure-system/             # 措施体系图
-│   └── settings/                   # 设置
-├── components/
-│   ├── Sidebar.tsx                 # 侧边栏导航
-│   └── gantt/                      # 甘特图组件
-├── lib/
-│   ├── hydraulicCalc.ts            # 水力计算逻辑（GB 51018-2014）
-│   ├── ditchModel.ts               # 排水沟数据模型
-│   ├── projectProfile.ts           # 特性表数据模型
-│   ├── parseMeasureExcel.ts        # 措施体系 Excel 解析
-│   └── generateDrawio.ts           # Draw.io XML 生成
-└── src-tauri/                      # Tauri 桌面应用配置
+.
+├── PRD.md                          # 产品需求文档
+├── docs/                           # 设计文档与规范参考
+│   ├── 水力计算流程.md              # 水力计算公式与设计标准
+│   ├── hydraulic-calc-spec.md      # 水力计算规格说明
+│   └── reference/                  # 规范数据与参考图
+│       ├── CpCt.xlsx
+│       ├── 表1.docx
+│       ├── 径流系数表.xlsx
+│       └── 进度图参考.png
+└── swc-app/                        # 主应用
+    ├── src/
+    │   ├── app/                    # Next.js App Router 页面
+    │   │   ├── page.tsx            # 工作台首页
+    │   │   ├── layout.tsx          # 全局布局（侧边栏 + 主内容区）
+    │   │   ├── globals.css         # 全局样式 + CSS 变量
+    │   │   ├── project-profile/    # 项目建设特性表
+    │   │   ├── progress/           # 进度图（甘特图）
+    │   │   ├── hydraulic-calc/     # 水力计算
+    │   │   ├── erision-calc/       # 流失量计算
+    │   │   ├── indicator-compare/  # 指标对比分析
+    │   │   ├── measure-system/     # 措施体系图
+    │   │   └── settings/           # 设置
+    │   ├── components/
+    │   │   ├── Sidebar.tsx         # 侧边栏导航
+    │   │   └── gantt/             # 甘特图组件
+    │   └── lib/
+    │       ├── hydraulicCalc.ts    # 水力计算逻辑（GB 51018-2014）
+    │       ├── ditchModel.ts       # 排水沟数据模型
+    │       ├── projectProfile.ts   # 特性表数据模型
+    │       ├── parseMeasureExcel.ts # 措施体系 Excel 解析
+    │       └── generateDrawio.ts   # Draw.io XML 生成
+    └── src-tauri/                  # Tauri 桌面应用配置
 ```
 
 ## 开发阶段

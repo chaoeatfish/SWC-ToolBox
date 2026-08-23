@@ -1,7 +1,15 @@
-# Ignore everything at root
+# Ignore everything at root by default
 *
 
-# Only track swc-app
+# Track project docs
+!docs/
+!docs/**
+
+# Track PRD
+!PRD.md
+!README.md
+
+# Track swc-app
 !swc-app/
 !swc-app/**
 !.gitignore
