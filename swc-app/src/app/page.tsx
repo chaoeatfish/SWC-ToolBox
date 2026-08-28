@@ -4,23 +4,12 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import {
   ChartLineUp,
-  Calculator,
-  GitDiff,
   TreeStructure,
-  Table,
   Drop,
-  Clock,
   ArrowRight,
 } from "@phosphor-icons/react";
 
 const tools = [
-  {
-    href: "/project-profile",
-    title: "项目建设特性表",
-    desc: "管理项目建设特性数据，为各功能模块提供基础数据",
-    icon: Table,
-    color: "bg-rose-50 text-rose-600 dark:bg-rose-950 dark:text-rose-400",
-  },
   {
     href: "/progress",
     title: "进度图",
@@ -36,32 +25,12 @@ const tools = [
     color: "bg-blue-50 text-blue-600 dark:bg-blue-950 dark:text-blue-400",
   },
   {
-    href: "/erision-calc",
-    title: "流失量计算",
-    desc: "水土流失量预测计算，支持多种计算模型",
-    icon: Calculator,
-    color: "bg-sky-50 text-sky-600 dark:bg-sky-950 dark:text-sky-400",
-  },
-  {
-    href: "/indicator-compare",
-    title: "指标对比分析",
-    desc: "水土保持指标对比分析，支持53号令和14号文指标对比",
-    icon: GitDiff,
-    color: "bg-violet-50 text-violet-600 dark:bg-violet-950 dark:text-violet-400",
-  },
-  {
     href: "/measure-system",
     title: "措施体系图",
     desc: "导入Excel体系表，自动生成Draw.io措施体系框图",
     icon: TreeStructure,
     color: "bg-amber-50 text-amber-600 dark:bg-amber-950 dark:text-amber-400",
   },
-];
-
-const recentItems = [
-  { name: "某高速公路项目进度图", time: "2 小时前" },
-  { name: "开发区水土流失量计算", time: "昨天" },
-  { name: "河道整治工程进度图", time: "3 天前" },
 ];
 
 export default function Home() {
@@ -111,25 +80,6 @@ export default function Home() {
                 </p>
               </Link>
             </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Recent */}
-      <section>
-        <h2 className="mb-4 text-sm font-medium text-muted">最近使用</h2>
-        <div className="divide-y divide-border rounded-xl border border-card-border bg-card-bg">
-          {recentItems.map((item) => (
-            <div
-              key={item.name}
-              className="flex items-center justify-between px-5 py-3.5"
-            >
-              <span className="text-sm font-medium">{item.name}</span>
-              <span className="flex items-center gap-1.5 text-xs text-muted">
-                <Clock size={13} />
-                {item.time}
-              </span>
-            </div>
           ))}
         </div>
       </section>

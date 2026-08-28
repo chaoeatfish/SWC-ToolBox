@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   TreeStructure,
   Upload,
@@ -41,6 +41,13 @@ export default function MeasureSystemPage() {
   const [fileName, setFileName] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState(false);
+
+  // 持久化 rows 到 localStorage（供进度图导入使用）
+  useEffect(() => {
+    if (rows.length > 0) {
+      localStorage.setItem("swc-measure-rows", JSON.stringify(rows));
+    }
+  }, [rows]);
   const [templates, setTemplates] = useState<MeasureTemplate[]>(loadTemplates);
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   const [templateName, setTemplateName] = useState("");
@@ -67,10 +74,10 @@ export default function MeasureSystemPage() {
     setLoading(false);
   };
 
-  const handleGenerate = () => {
+  const handleGenerate = async () => {
     if (rows.length === 0) return;
     const xml = generateDrawioXml(rows);
-    downloadDrawio(xml);
+    await downloadDrawio(xml);
   };
 
   const handleClear = () => {
@@ -108,19 +115,14 @@ export default function MeasureSystemPage() {
     saveTemplates(next);
   };
 
-  // 统计层级
+  // 统计层级（去空值、去重）
+  const uniqueLevel1 = new Set(rows.map((r) => r.level1).filter(Boolean));
+  const uniqueLevel2 = new Set(rows.map((r) => r.level2).filter(Boolean));
+  const uniqueLevel3 = new Set(rows.map((r) => r.level3).filter(Boolean));
   const stats = {
-    level1: new Set(rows.map((r) => r.level1)).size,
-    level2: new Set(rows.map((r) => `${r.level1}/${r.level2}`)).size,
-    level3: new Set(rows.map((r) => `${r.level1}/${r.level2}/${r.level3}`)).size,
-    measures: rows.reduce(
-      (acc, r) =>
-        acc +
-        (r.engineering ? 1 : 0) +
-        (r.plant ? 1 : 0) +
-        (r.temporary ? 1 : 0),
-      0
-    ),
+    level1: uniqueLevel1.size,
+    level2: uniqueLevel2.size,
+    level3: uniqueLevel3.size,
   };
 
   return (
@@ -321,7 +323,6 @@ export default function MeasureSystemPage() {
               { label: "一级分区", value: stats.level1, color: "bg-slate-500" },
               { label: "二级分区", value: stats.level2, color: "bg-blue-500" },
               { label: "三级分区", value: stats.level3, color: "bg-sky-400" },
-              { label: "措施项", value: stats.measures, color: "bg-amber-500" },
             ].map((s) => (
               <div
                 key={s.label}

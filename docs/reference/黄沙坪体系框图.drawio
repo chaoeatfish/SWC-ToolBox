@@ -1,0 +1,163 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="第 1 页" id="Noci_h7cSrGSWcdXw6YH">
+    <mxGraphModel dx="1153" dy="692" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nts3OA-BBRjl9exGtiL0-1" value="防治措施体系" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="150" y="230.25" width="20" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-2" value="光伏阵列区" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="200" y="185.25" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-3" value="集电线路区" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="200" y="275.25" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-4" value="临时堆土区" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="200" y="350" width="90" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-6" value="工程措施" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="330" y="160" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-7" value="植物措施" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="330" y="190.25" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-8" value="临时措施" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="330" y="220.25" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-19" value="表土剥离及回覆、土地整治" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="430" y="160" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-20" value="撒播草籽" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="430" y="190.25" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-21" value="临时拦挡、临时苫盖、临时铺垫、临时排水沟" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="430" y="220.25" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-56" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="170.25" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-57" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="260" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-60" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="nts3OA-BBRjl9exGtiL0-56" target="nts3OA-BBRjl9exGtiL0-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="310" as="sourcePoint" />
+            <mxPoint x="400" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-61" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="nts3OA-BBRjl9exGtiL0-56" target="nts3OA-BBRjl9exGtiL0-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="270" as="sourcePoint" />
+            <mxPoint x="370" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-63" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" parent="1" vertex="1">
+          <mxGeometry x="170" y="200" width="30" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-68" value="" style="endArrow=none;html=1;rounded=0;entryX=-0.007;entryY=0.553;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.497;exitY=0.648;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="186" y="290.11" as="sourcePoint" />
+            <mxPoint x="200" y="290.11" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-69" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="nts3OA-BBRjl9exGtiL0-6" target="nts3OA-BBRjl9exGtiL0-19" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="120" as="sourcePoint" />
+            <mxPoint x="450" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-70" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="200" as="sourcePoint" />
+            <mxPoint x="430" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-71" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="230.05" as="sourcePoint" />
+            <mxPoint x="430" y="230.05" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nts3OA-BBRjl9exGtiL0-79" value="注：主体未考虑水土保持措施，本方案均为新增措施" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="150" y="400" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-1" value="工程措施" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="330" y="250" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-2" value="植物措施" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="330" y="280.25" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-3" value="临时措施" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="330" y="310.25" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-4" value="表土剥离及回覆、土地整治" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="430" y="250" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-5" value="撒播草籽" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="430" y="280.25" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-6" value="临时苫盖" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="430" y="310.25" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-7" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="5oFpr9ld5hK44IQDFBHZ-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="290" as="sourcePoint" />
+            <mxPoint x="400" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-8" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5oFpr9ld5hK44IQDFBHZ-1" target="5oFpr9ld5hK44IQDFBHZ-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="210" as="sourcePoint" />
+            <mxPoint x="450" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-9" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="290" as="sourcePoint" />
+            <mxPoint x="430" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-10" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="320.05" as="sourcePoint" />
+            <mxPoint x="430" y="320.05" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-22" value="植物措施" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="330" y="340.25" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-23" value="临时措施" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="330" y="370" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-25" value="撒播草籽" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="430" y="340.25" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-26" value="临时铺垫、临时苫盖" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;" parent="1" vertex="1">
+          <mxGeometry x="430" y="370" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-29" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="350" as="sourcePoint" />
+            <mxPoint x="430" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-30" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="379.72" as="sourcePoint" />
+            <mxPoint x="430" y="379.72" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-31" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="350" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5oFpr9ld5hK44IQDFBHZ-35" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="290.11" as="sourcePoint" />
+            <mxPoint x="330" y="290.11" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

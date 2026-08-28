@@ -1,0 +1,364 @@
+<mxfile host="Electron">
+  <diagram id="swc-measure-system" name="措施体系图">
+    <mxGraphModel dx="1542" dy="922" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=14;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="防治措施体系" vertex="1">
+          <mxGeometry height="60" width="20" x="30" y="381" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="风机平台区" vertex="1">
+          <mxGeometry height="28" width="80" x="90" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="工程措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="51" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="浆砌石排水沟、浆砌石截水沟、急流槽、沉沙池" vertex="1">
+          <mxGeometry height="18" width="310" x="291" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="表土剥离、表土回覆、土地整治" vertex="1">
+          <mxGeometry height="18" width="310" x="291" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="植物措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="87" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="撒播草籽、栽植灌木、挂网喷播" vertex="1">
+          <mxGeometry height="18" width="212" x="291" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="临时措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="123" as="geometry" />
+        </mxCell>
+        <mxCell id="17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时排水、临时沉沙池" vertex="1">
+          <mxGeometry height="18" width="156" x="291" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时苫盖、临时拦挡" vertex="1">
+          <mxGeometry height="18" width="156" x="291" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="升压站区" vertex="1">
+          <mxGeometry height="28" width="80" x="90" y="214" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="工程措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="173" as="geometry" />
+        </mxCell>
+        <mxCell id="25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fontStyle=2;fillColor=#ffffff;fontColor=#666666;strokeColor=#999999;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="浆砌石排水沟、浆砌石截水沟、沉沙池" vertex="1">
+          <mxGeometry height="18" width="254" x="291" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fontStyle=2;fillColor=#ffffff;fontColor=#666666;strokeColor=#999999;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="表土剥离、表土回覆、土地整治" vertex="1">
+          <mxGeometry height="18" width="254" x="291" y="182" as="geometry" />
+        </mxCell>
+        <mxCell id="29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="植物措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="219" as="geometry" />
+        </mxCell>
+        <mxCell id="31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="骨架植草护坡" vertex="1">
+          <mxGeometry height="18" width="100" x="291" y="208" as="geometry" />
+        </mxCell>
+        <mxCell id="33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="绿化带" vertex="1">
+          <mxGeometry height="18" width="100" x="291" y="228" as="geometry" />
+        </mxCell>
+        <mxCell id="35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="临时措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时排水、临时沉沙池" vertex="1">
+          <mxGeometry height="18" width="156" x="291" y="254" as="geometry" />
+        </mxCell>
+        <mxCell id="39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时拦挡、临时苫盖" vertex="1">
+          <mxGeometry height="18" width="156" x="291" y="274" as="geometry" />
+        </mxCell>
+        <mxCell id="41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="道路工程区" vertex="1">
+          <mxGeometry height="28" width="80" x="90" y="407" as="geometry" />
+        </mxCell>
+        <mxCell id="43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="改建道路" vertex="1">
+          <mxGeometry height="28" width="80" x="210" y="346" as="geometry" />
+        </mxCell>
+        <mxCell id="45" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="工程措施" vertex="1">
+          <mxGeometry height="18" width="65" x="330" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="47" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="浆砌石排水沟、沉沙池、截水沟、急流槽、过路涵" vertex="1">
+          <mxGeometry height="18" width="324" x="411" y="304" as="geometry" />
+        </mxCell>
+        <mxCell id="49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="导水槽" vertex="1">
+          <mxGeometry height="18" width="324" x="411" y="324" as="geometry" />
+        </mxCell>
+        <mxCell id="51" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="表土剥离、表土回覆、土地整治" vertex="1">
+          <mxGeometry height="18" width="324" x="411" y="344" as="geometry" />
+        </mxCell>
+        <mxCell id="53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="植物措施" vertex="1">
+          <mxGeometry height="18" width="65" x="330" y="371" as="geometry" />
+        </mxCell>
+        <mxCell id="55" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="撒播草籽、栽植灌木、挂网喷播" vertex="1">
+          <mxGeometry height="18" width="212" x="411" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="57" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="临时措施" vertex="1">
+          <mxGeometry height="18" width="65" x="330" y="407" as="geometry" />
+        </mxCell>
+        <mxCell id="59" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时排水、临时沉沙池" vertex="1">
+          <mxGeometry height="18" width="156" x="411" y="396" as="geometry" />
+        </mxCell>
+        <mxCell id="61" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时拦挡、临时苫盖" vertex="1">
+          <mxGeometry height="18" width="156" x="411" y="416" as="geometry" />
+        </mxCell>
+        <mxCell id="63" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="新建道路" vertex="1">
+          <mxGeometry height="28" width="80" x="210" y="468" as="geometry" />
+        </mxCell>
+        <mxCell id="65" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="工程措施" vertex="1">
+          <mxGeometry height="18" width="65" x="330" y="447" as="geometry" />
+        </mxCell>
+        <mxCell id="67" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="浆砌石排水沟、沉沙池、截水沟、急流槽、过路涵" vertex="1">
+          <mxGeometry height="18" width="324" x="411" y="426" as="geometry" />
+        </mxCell>
+        <mxCell id="69" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="导水槽" vertex="1">
+          <mxGeometry height="18" width="324" x="411" y="446" as="geometry" />
+        </mxCell>
+        <mxCell id="71" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="表土剥离、表土回覆、土地整治" vertex="1">
+          <mxGeometry height="18" width="324" x="411" y="466" as="geometry" />
+        </mxCell>
+        <mxCell id="73" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="植物措施" vertex="1">
+          <mxGeometry height="18" width="65" x="330" y="493" as="geometry" />
+        </mxCell>
+        <mxCell id="75" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="撒播草籽、栽植灌木、挂网喷播" vertex="1">
+          <mxGeometry height="18" width="212" x="411" y="492" as="geometry" />
+        </mxCell>
+        <mxCell id="77" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="临时措施" vertex="1">
+          <mxGeometry height="18" width="65" x="330" y="529" as="geometry" />
+        </mxCell>
+        <mxCell id="79" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时排水、临时沉沙池" vertex="1">
+          <mxGeometry height="18" width="156" x="411" y="518" as="geometry" />
+        </mxCell>
+        <mxCell id="81" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时拦挡、临时苫盖" vertex="1">
+          <mxGeometry height="18" width="156" x="411" y="538" as="geometry" />
+        </mxCell>
+        <mxCell id="83" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="施工临建区" vertex="1">
+          <mxGeometry height="28" width="80" x="90" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="85" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="工程措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="549" as="geometry" />
+        </mxCell>
+        <mxCell id="87" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="表土剥离、表土回覆、土地整治" vertex="1">
+          <mxGeometry height="18" width="212" x="291" y="548" as="geometry" />
+        </mxCell>
+        <mxCell id="89" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="植物措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="91" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="撒播草籽" vertex="1">
+          <mxGeometry height="18" width="80" x="291" y="574" as="geometry" />
+        </mxCell>
+        <mxCell id="93" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="临时措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="611" as="geometry" />
+        </mxCell>
+        <mxCell id="95" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时排水、临时沉沙池" vertex="1">
+          <mxGeometry height="18" width="156" x="291" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="97" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时苫盖" vertex="1">
+          <mxGeometry height="18" width="156" x="291" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="99" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="弃渣场区" vertex="1">
+          <mxGeometry height="28" width="80" x="90" y="702" as="geometry" />
+        </mxCell>
+        <mxCell id="101" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="工程措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="671" as="geometry" />
+        </mxCell>
+        <mxCell id="103" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="浆砌石截排水沟、急流槽、沉沙池" vertex="1">
+          <mxGeometry height="18" width="226" x="291" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="105" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="挡渣墙" vertex="1">
+          <mxGeometry height="18" width="226" x="291" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="107" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="表土剥离、表土回覆、土地整治" vertex="1">
+          <mxGeometry height="18" width="226" x="291" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="109" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="植物措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="717" as="geometry" />
+        </mxCell>
+        <mxCell id="111" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="撒播草籽、栽植灌木" vertex="1">
+          <mxGeometry height="18" width="142" x="291" y="716" as="geometry" />
+        </mxCell>
+        <mxCell id="113" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;" value="临时措施" vertex="1">
+          <mxGeometry height="18" width="65" x="210" y="753" as="geometry" />
+        </mxCell>
+        <mxCell id="115" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时排水沟、临时沉沙池" vertex="1">
+          <mxGeometry height="18" width="170" x="291" y="742" as="geometry" />
+        </mxCell>
+        <mxCell id="117" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=仿宋;fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;" value="临时苫盖、临时拦挡" vertex="1">
+          <mxGeometry height="18" width="170" x="291" y="762" as="geometry" />
+        </mxCell>
+        <mxCell id="119" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=仿宋;fontSize=9;fontStyle=2;fontColor=#666666;" value="注：斜体灰色项为主体工程已列措施，其余为本方案新增措施" vertex="1">
+          <mxGeometry height="20" width="650" x="30" y="808" as="geometry" />
+        </mxCell>
+        <mxCell id="4" edge="1" parent="1" source="2" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6" edge="1" parent="1" source="3" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8" edge="1" parent="1" source="5" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="10" edge="1" parent="1" source="5" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" edge="1" parent="1" source="3" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" edge="1" parent="1" source="11" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" edge="1" parent="1" source="3" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" edge="1" parent="1" source="15" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" edge="1" parent="1" source="15" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" edge="1" parent="1" source="2" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" edge="1" parent="1" source="21" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" edge="1" parent="1" source="23" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" edge="1" parent="1" source="23" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" edge="1" parent="1" source="21" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" edge="1" parent="1" source="29" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="34" edge="1" parent="1" source="29" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="36" edge="1" parent="1" source="21" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="38" edge="1" parent="1" source="35" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="40" edge="1" parent="1" source="35" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="42" edge="1" parent="1" source="2" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="44" edge="1" parent="1" source="41" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="46" edge="1" parent="1" source="43" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="48" edge="1" parent="1" source="45" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="50" edge="1" parent="1" source="45" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="52" edge="1" parent="1" source="45" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="54" edge="1" parent="1" source="43" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="56" edge="1" parent="1" source="53" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="58" edge="1" parent="1" source="43" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60" edge="1" parent="1" source="57" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="62" edge="1" parent="1" source="57" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="64" edge="1" parent="1" source="41" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="66" edge="1" parent="1" source="63" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="68" edge="1" parent="1" source="65" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70" edge="1" parent="1" source="65" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="72" edge="1" parent="1" source="65" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="71">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="74" edge="1" parent="1" source="63" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="76" edge="1" parent="1" source="73" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="78" edge="1" parent="1" source="63" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="77">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="80" edge="1" parent="1" source="77" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="79">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="82" edge="1" parent="1" source="77" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="81">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="84" edge="1" parent="1" source="2" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="83">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="86" edge="1" parent="1" source="83" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="85">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="88" edge="1" parent="1" source="85" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="90" edge="1" parent="1" source="83" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="89">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="92" edge="1" parent="1" source="89" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="94" edge="1" parent="1" source="83" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="93">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="96" edge="1" parent="1" source="93" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="95">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="98" edge="1" parent="1" source="93" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="97">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="100" edge="1" parent="1" source="2" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="99">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="102" edge="1" parent="1" source="99" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="101">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="104" edge="1" parent="1" source="101" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="106" edge="1" parent="1" source="101" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="105">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="108" edge="1" parent="1" source="101" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="110" edge="1" parent="1" source="99" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="112" edge="1" parent="1" source="109" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="114" edge="1" parent="1" source="99" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="113">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="116" edge="1" parent="1" source="113" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="115">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="118" edge="1" parent="1" source="113" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

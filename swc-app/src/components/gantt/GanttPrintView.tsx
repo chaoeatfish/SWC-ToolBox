@@ -1,6 +1,15 @@
 "use client";
 
-import { type GanttItem, daysInMonth } from "./types";
+import { type GanttItem, type MeasureType, daysInMonth } from "./types";
+
+const TYPE_COLORS: Record<MeasureType, string> = {
+  "工程措施": "#1e40af",
+  "植物措施": "#15803d",
+  "临时措施": "#b45309",
+};
+function getTypeColor(item: GanttItem): string {
+  return item.measureType && TYPE_COLORS[item.measureType] ? TYPE_COLORS[item.measureType] : "#6b7280";
+}
 
 interface Props {
   items: GanttItem[];
@@ -145,7 +154,7 @@ export function GanttPrintView({ items, scale }: Props) {
 
                           return (
                             <td key={`${y}-${m}`} style={{ ...TD_CENTER, padding: "3px 0" }}>
-                              <div style={{ backgroundColor: item.color, height: "3px", marginLeft: `${barLeft}%`, marginRight: `${barRight}%` }} />
+                              <div style={{ backgroundColor: getTypeColor(item), height: "2px", marginLeft: `${barLeft}%`, marginRight: `${barRight}%` }} />
                             </td>
                           );
                         })
@@ -167,7 +176,7 @@ export function GanttPrintView({ items, scale }: Props) {
 
                           return (
                             <td key={`${y}-q${qi + 1}`} style={{ ...TD_CENTER, padding: "3px 0" }}>
-                              <div style={{ backgroundColor: item.color, height: "3px", marginLeft: `${barLeft}%`, marginRight: `${barRight}%` }} />
+                              <div style={{ backgroundColor: getTypeColor(item), height: "2px", marginLeft: `${barLeft}%`, marginRight: `${barRight}%` }} />
                             </td>
                           );
                         })

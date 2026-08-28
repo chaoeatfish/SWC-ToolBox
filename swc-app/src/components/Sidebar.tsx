@@ -5,23 +5,15 @@ import { usePathname } from "next/navigation";
 import {
   House,
   ChartLineUp,
-  Calculator,
-  GitDiff,
   TreeStructure,
-  Table,
   Drop,
-  Gear,
 } from "@phosphor-icons/react";
 
 const navItems = [
   { href: "/", label: "工作台", icon: House },
-  { href: "/project-profile", label: "项目建设特性表", icon: Table },
   { href: "/progress", label: "进度图", icon: ChartLineUp },
   { href: "/hydraulic-calc", label: "水力计算", icon: Drop },
-  { href: "/erision-calc", label: "流失量计算", icon: Calculator },
-  { href: "/indicator-compare", label: "指标对比分析", icon: GitDiff },
   { href: "/measure-system", label: "措施体系图", icon: TreeStructure },
-  { href: "/settings", label: "设置", icon: Gear },
 ];
 
 export function Sidebar() {

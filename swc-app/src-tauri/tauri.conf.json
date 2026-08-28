@@ -2,12 +2,22 @@
   "$schema": "https://raw.githubusercontent.com/nicbarker/tauri/refs/heads/v2/crates/tauri-utils/schema.json",
   "productName": "SWC Toolbox",
   "version": "0.1.0",
-  "identifier": "com.swc-toolbox.app",
+  "identifier": "com.swc-toolbox",
   "build": {
     "frontendDist": "../out",
     "devUrl": "http://localhost:3000",
     "beforeDevCommand": "pnpm dev",
-    "beforeBuildCommand": "pnpm build"
+    "beforeBuildCommand": "build-frontend.cmd"
+  },
+  "bundle": {
+    "targets": ["nsis"],
+    "active": true,
+    "windows": {
+      "webviewInstallMode": {
+        "type": "embedBootstrapper",
+        "silent": true
+      }
+    }
   },
   "app": {
     "windows": [

@@ -1,307 +1,303 @@
 import type { MeasureRow } from "./parseMeasureExcel";
 
-// ── 节点样式预设 ──────────────────────────────────────────────
-const STYLES = {
-  level1:
-    "rounded=1;whiteSpace=wrap;html=1;fillColor=#1e3a5f;fontColor=#ffffff;strokeColor=#0f2440;fontSize=14;fontStyle=1;arcSize=12;shadow=1;",
-  level2:
-    "rounded=1;whiteSpace=wrap;html=1;fillColor=#2563eb;fontColor=#ffffff;strokeColor=#1d4ed8;fontSize=12;fontStyle=1;arcSize=10;shadow=1;",
-  level3:
-    "rounded=1;whiteSpace=wrap;html=1;fillColor=#60a5fa;fontColor=#1e3a5f;strokeColor=#3b82f6;fontSize=11;fontStyle=1;arcSize=8;",
-  measure_eng:
-    "rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;fontColor=#78350f;strokeColor=#d97706;fontSize=10;arcSize=8;",
-  measure_plant:
-    "rounded=1;whiteSpace=wrap;html=1;fillColor=#22c55e;fontColor=#14532d;strokeColor=#16a34a;fontSize=10;arcSize=8;",
-  measure_temp:
-    "rounded=1;whiteSpace=wrap;html=1;fillColor=#a78bfa;fontColor=#3b0764;strokeColor=#8b5cf6;fontSize=10;arcSize=8;",
-  edge: "edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94a3b8;strokeWidth=1.5;curved=0;",
-  container:
-    "rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;strokeWidth=2;dashed=1;arcSize=6;fontSize=12;fontStyle=1;fontColor=#475569;verticalAlign=top;align=center;spacingTop=4;",
+// ── 样式 ──────────────────────────────────────────────────────
+const FONT = "fontFamily=仿宋;";
+const S = {
+  root: `rounded=0;whiteSpace=wrap;html=1;${FONT}fontSize=14;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;`,
+  level: `rounded=0;whiteSpace=wrap;html=1;${FONT}fontSize=12;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;`,
+  mtype: `rounded=0;whiteSpace=wrap;html=1;${FONT}fontSize=11;fontStyle=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=center;`,
+  item: `rounded=0;whiteSpace=wrap;html=1;${FONT}fontSize=10;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;`,
+  itemEx: `rounded=0;whiteSpace=wrap;html=1;${FONT}fontSize=10;fontStyle=2;fillColor=#ffffff;fontColor=#666666;strokeColor=#999999;strokeWidth=1;verticalAlign=middle;align=left;spacingLeft=4;`,
+  edgeH: `endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;`,
+  note: `text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=仿宋;fontSize=9;fontStyle=2;fontColor=#666666;`,
 } as const;
 
 // ── 布局常量 ──────────────────────────────────────────────────
-const BOX_W = 150;
-const BOX_H = 40;
-const GAP_X = 30;
-const GAP_Y = 20;
-const CONTAINER_PAD = 20;
-const MEASURE_COL_W = 130;
-const MEASURE_GAP = 12;
+const ROOT_W = 20;
+const ROOT_H = 110;
+const LVL_W = 80;
+const LVL_H = 28;
+const MT_W = 65;
+const MT_H = 18;
+const ITEM_H = 18;
+const ITEM_MAX_W = 250; // 动态调整，见 renderGroup
+const CHAR_W = 14;
+const CHAR_W_EN = 7;
+const ITEM_GAP = 2;
+const LINE_GAP = 2;
+const MT_GAP = 6;
+const GROUP_GAP = 10;
+const X_GAP = 40;
 
-interface Node {
-  id: string;
-  label: string;
-  style: string;
-  x: number;
-  y: number;
-  w: number;
-  h: number;
+// ── 工具 ──────────────────────────────────────────────────────
+const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+function tw(text: string): number {
+  let w = 0; for (const ch of text) w += ch.charCodeAt(0) > 127 ? CHAR_W : CHAR_W_EN; return w;
 }
 
-interface Edge {
-  id: string;
-  source: string;
-  target: string;
+// ── 功能分组（隐式，仅影响排列顺序）──────────────────────────
+const GROUP_ORDER = [
+  { re: /排水沟|截水沟|截排水沟|排水管|排水渠|急流槽|沉沙池|消力池|导水槽|过路涵|暗沟|排水/, label: "排水" },
+  { re: /挡渣墙|拦渣坝|拦挡坝|谷坊|挡土墙|护坡|护岸|护脚|防冲|护堤|挡墙/, label: "挡护" },
+  { re: /表土剥离|表土回覆|土地整治|覆土|客土|平整/, label: "土方" },
+  { re: /植草|种草|撒播|喷播|绿化|栽植|造林|铺草皮|挂网|骨架|框格|锚杆|喷混|生态/, label: "绿化" },
+  { re: /苫盖|拦挡|铺垫|临时|围堰/, label: "临时" },
+];
+
+function groupKey(name: string): number {
+  for (let i = 0; i < GROUP_ORDER.length; i++) {
+    if (GROUP_ORDER[i].re.test(name)) return i;
+  }
+  return GROUP_ORDER.length;
 }
 
-/**
- * 将 Excel 数据行转为 Draw.io XML
- *
- * 布局策略（自顶向下树形）：
- *   Level1 (顶层)
- *     └─ Level2
- *          └─ Level3
- *               ├─ 工程措施
- *               ├─ 植物措施
- *               └─ 临时措施
- */
+type Item = { name: string; existing: boolean };
+
+// 按功能分组排列，返回分组后的行
+function arrangeItems(items: Item[], maxW = ITEM_MAX_W): Item[][] {
+  const groups = new Map<number, Item[]>();
+  for (const it of items) {
+    const gk = groupKey(it.name);
+    if (!groups.has(gk)) groups.set(gk, []);
+    groups.get(gk)!.push(it);
+  }
+  const lines: Item[][] = [];
+  for (const [, groupItems] of [...groups.entries()].sort((a, b) => a[0] - b[0])) {
+    let cur: Item[] = [];
+    let curW = 0;
+    for (const it of groupItems) {
+      const w = tw(it.name) + 16;
+      if (cur.length > 0 && curW + w > maxW) { lines.push(cur); cur = []; curW = 0; }
+      cur.push(it); curW += w;
+    }
+    if (cur.length) lines.push(cur);
+  }
+  return lines;
+}
+
+function measureTypeHeight(items: Item[], maxW = ITEM_MAX_W): number {
+  const lineCount = arrangeItems(items, maxW).length;
+  const itemsH = lineCount * ITEM_H + (lineCount - 1) * LINE_GAP;
+  return MT_H + MT_GAP + itemsH;
+}
+
+// ── 树结构 ────────────────────────────────────────────────────
+type Measures = { eng: Item[]; plant: Item[]; temp: Item[] };
+type L3Map = Map<string, Measures>;
+type L2Map = Map<string, L3Map>;
+type Tree = Map<string, L2Map>;
+
+function parseItems(raw: string): Item[] {
+  if (!raw) return [];
+  return raw.split(/[、,，;；]/).map(s => s.trim()).filter(Boolean).map(name => {
+    const hasMarker = name.includes("（主体已有）") || name.includes("(主体已有)");
+    const clean = name.replace(/[（(]主体已有[）)]/g, "").trim();
+    return { name: clean, existing: hasMarker };
+  });
+}
+
+function buildTree(rows: MeasureRow[]): Tree {
+  const t: Tree = new Map();
+  for (const r of rows) {
+    const l1 = r.level1 || "未分类";
+    const l2 = r.level2 || "";
+    const l3 = r.level3 || "";
+    if (!t.has(l1)) t.set(l1, new Map());
+    const l2m = t.get(l1)!;
+    const l2k = l2 || "__leaf__";
+    if (!l2m.has(l2k)) l2m.set(l2k, new Map());
+    const l3m = l2m.get(l2k)!;
+    const l3k = l3 || "__leaf__";
+    if (!l3m.has(l3k)) l3m.set(l3k, { eng: [], plant: [], temp: [] });
+    const m = l3m.get(l3k)!;
+    for (const it of parseItems(r.engineering)) if (!m.eng.some(e => e.name === it.name)) m.eng.push(it);
+    for (const it of parseItems(r.plant)) if (!m.plant.some(e => e.name === it.name)) m.plant.push(it);
+    for (const it of parseItems(r.temporary)) if (!m.temp.some(e => e.name === it.name)) m.temp.push(it);
+  }
+  return t;
+}
+
+function getLeaf(l3m: L3Map): Measures {
+  if (l3m.size === 1) { const [k, v] = [...l3m.entries()][0]; if (k === "__leaf__") return v; }
+  const m: Measures = { eng: [], plant: [], temp: [] };
+  for (const [, v] of l3m) {
+    for (const it of v.eng) if (!m.eng.some(e => e.name === it.name)) m.eng.push(it);
+    for (const it of v.plant) if (!m.plant.some(e => e.name === it.name)) m.plant.push(it);
+    for (const it of v.temp) if (!m.temp.some(e => e.name === it.name)) m.temp.push(it);
+  }
+  return m;
+}
+
+// ── 生成 XML ──────────────────────────────────────────────────
 export function generateDrawioXml(rows: MeasureRow[]): string {
-  const nodes: Node[] = [];
-  const edges: Edge[] = [];
-  let cellId = 2; // 0=root, 1=defaultLayer
+  const nodes: { id: string; v: string; s: string; x: number; y: number; w: number; h: number }[] = [];
+  const edges: { id: string; src: string; tgt: string; s: string }[] = [];
+  let cid = 2;
+  const nid = () => String(cid++);
+  const tree = buildTree(rows);
+  let hasEx = false;
 
-  const nextId = () => String(cellId++);
+  // 措施项可用宽度（根据层级的 bx 计算）
+  const PAGE_RIGHT = 827 - 30;
+  const itemXOffset = MT_W + 16;
+  function availW(bx: number) { return PAGE_RIGHT - (bx + itemXOffset) - 10; }
 
-  // ── 构建层级树 ────────────────────────────────────────────
-  // level1 -> level2 -> level3 -> measures
-  const tree = new Map<
-    string,
-    Map<string, Map<string, { eng: string[]; plant: string[]; temp: string[] }>>
-  >();
-
-  for (const row of rows) {
-    const l1 = row.level1 || "未分类";
-    const l2 = row.level2 || "未分类";
-    const l3 = row.level3 || "未分类";
-
-    if (!tree.has(l1)) tree.set(l1, new Map());
-    const l2Map = tree.get(l1)!;
-    if (!l2Map.has(l2)) l2Map.set(l2, new Map());
-    const l3Map = l2Map.get(l2)!;
-    if (!l3Map.has(l3)) l3Map.set(l3, { eng: [], plant: [], temp: [] });
-    const measures = l3Map.get(l3)!;
-
-    if (row.engineering && !measures.eng.includes(row.engineering))
-      measures.eng.push(row.engineering);
-    if (row.plant && !measures.plant.includes(row.plant))
-      measures.plant.push(row.plant);
-    if (row.temporary && !measures.temp.includes(row.temporary))
-      measures.temp.push(row.temporary);
+  // 措施类型组高度
+  function measuresHeight(m: Measures, aw: number): number {
+    const heights = [m.eng, m.plant, m.temp].filter(c => c.length > 0).map(c => measureTypeHeight(c, aw));
+    return heights.length ? heights.reduce((a, b) => a + b, 0) + (heights.length - 1) * MT_GAP : LVL_H;
   }
 
-  // ── 计算布局 ──────────────────────────────────────────────
-  // 计算每个 l3 节点下方措施列的总宽度
-  function measuresWidth(m: { eng: string[]; plant: string[]; temp: string[] }) {
-    const cols = [m.eng, m.plant, m.temp].filter((c) => c.length > 0);
-    if (cols.length === 0) return BOX_W;
-    return cols.length * MEASURE_COL_W + (cols.length - 1) * MEASURE_GAP;
-  }
-
-  // 自顶向下布局
-  let globalY = 0;
-  const l1Ids = new Map<string, string>();
-  const l2Ids = new Map<string, string>();
-  const l3Ids = new Map<string, string>();
-
-  // 每个 l1 的总宽度（用于整体居中，这里先计算再布局）
-  // 简化策略：逐层向下，每层宽度由子节点决定
-
-  for (const [l1, l2Map] of tree) {
-    const l1Id = nextId();
-    l1Ids.set(l1, l1Id);
-
-    // 收集该 l1 下所有 l2 子树宽度
-    const l2Layouts: { name: string; width: number }[] = [];
-    for (const [l2, l3Map] of l2Map) {
-      let l2Width = 0;
-      for (const [, measures] of l3Map) {
-        const w = measuresWidth(measures);
-        l2Width += w + GAP_X;
-      }
-      l2Width = Math.max(l2Width - GAP_X, BOX_W);
-      l2Layouts.push({ name: l2, width: l2Width });
+  function branchH(l2m: L2Map, aw: number): number {
+    const hs: number[] = [];
+    for (const [, l3m] of l2m) {
+      if (l3m.size === 1 && [...l3m.keys()][0] === "__leaf__") hs.push(measuresHeight(getLeaf(l3m), aw));
+      else { let h = 0; for (const [, m] of l3m) h += measuresHeight(m, aw) + GROUP_GAP; hs.push(Math.max(h - GROUP_GAP, LVL_H)); }
     }
+    return hs.length ? hs.reduce((a, b) => a + b, 0) + (hs.length - 1) * GROUP_GAP : LVL_H;
+  }
 
-    // l1 总宽度
-    let l1Width = 0;
-    for (const l of l2Layouts) l1Width += l.width + GAP_X;
-    l1Width = Math.max(l1Width - GAP_X, BOX_W);
+  // 渲染措施组（工程措施/植物措施/临时措施，各类型内按功能分组排列）
+  function renderGroup(m: Measures, bx: number, by: number, parentId: string) {
+    const types: { label: string; items: Item[] }[] = [];
+    if (m.eng.length) types.push({ label: "工程措施", items: m.eng });
+    if (m.plant.length) types.push({ label: "植物措施", items: m.plant });
+    if (m.temp.length) types.push({ label: "临时措施", items: m.temp });
+    if (types.length === 0) return;
 
-    // 放置 l1
-    const l1X = 0; // 后续统一平移
-    const l1Y = globalY;
-    nodes.push({
-      id: l1Id,
-      label: l1,
-      style: STYLES.level1,
-      x: l1X,
-      y: l1Y,
-      w: l1Width,
-      h: BOX_H,
-    });
+    for (const it of [...m.eng, ...m.plant, ...m.temp]) if (it.existing) hasEx = true;
 
-    let l2X = l1X;
-    const l2Y = l1Y + BOX_H + GAP_Y;
+    const itemX = bx + itemXOffset;
+    const localAvailW = PAGE_RIGHT - itemX - 10;
 
-    for (const l2Layout of l2Layouts) {
-      const l2 = l2Layout.name;
-      const l2Id = nextId();
-      l2Ids.set(`${l1}/${l2}`, l2Id);
+    let cy = by;
+    const gap = MT_GAP; // 头与项之间的间距
 
-      nodes.push({
-        id: l2Id,
-        label: l2,
-        style: STYLES.level2,
-        x: l2X,
-        y: l2Y,
-        w: l2Layout.width,
-        h: BOX_H,
-      });
-      edges.push({
-        id: nextId(),
-        source: l1Id,
-        target: l2Id,
-      });
+    for (const mt of types) {
+      const lines = arrangeItems(mt.items, localAvailW);
 
-      // l3 节点
-      const l3Map = l2Map.get(l2)!;
-      let l3X = l2X;
-      const l3Y = l2Y + BOX_H + GAP_Y;
+      // 统一宽度
+      const lineTexts = lines.map(line => line.map(it => it.name).join("、"));
+      const maxLineW = Math.max(...lineTexts.map(t => tw(t) + 16), 80);
+      const uniformW = Math.min(maxLineW, localAvailW);
 
-      for (const [l3, measures] of l3Map) {
-        const l3Id = nextId();
-        const l3Key = `${l1}/${l2}/${l3}`;
-        l3Ids.set(l3Key, l3Id);
+      // 措施项区域
+      const itemsH = lineTexts.length * ITEM_H + (lineTexts.length - 1) * LINE_GAP;
+      // 头垂直居中于措施项区域（项从 cy+gap 开始，中心在 cy+gap+itemsH/2）
+      const mtY = cy + gap + itemsH / 2 - MT_H / 2;
+      const mtId = nid();
+      nodes.push({ id: mtId, v: mt.label, s: S.mtype, x: bx, y: mtY, w: MT_W, h: MT_H });
+      edges.push({ id: nid(), src: parentId, tgt: mtId, s: S.edgeH });
 
-        const mw = measuresWidth(measures);
+      // 措施项从 cy + gap 开始（与头不重叠）
+      let iy = cy + gap;
+      for (let li = 0; li < lineTexts.length; li++) {
+        const hasExisting = lines[li].every(it => it.existing);
+        const iId = nid();
+        nodes.push({ id: iId, v: lineTexts[li], s: hasExisting ? S.itemEx : S.item, x: itemX, y: iy, w: uniformW, h: ITEM_H });
+        edges.push({ id: nid(), src: mtId, tgt: iId, s: S.edgeH });
+        iy += ITEM_H + LINE_GAP;
+      }
+      cy += MT_H + gap + itemsH + MT_GAP;
+    }
+  }
 
-        nodes.push({
-          id: l3Id,
-          label: l3,
-          style: STYLES.level3,
-          x: l3X,
-          y: l3Y,
-          w: mw,
-          h: BOX_H,
-        });
-        edges.push({
-          id: nextId(),
-          source: l2Id,
-          target: l3Id,
-        });
+  // ── 主布局 ──────────────────────────────────────────────────
+  const rid = nid();
+  let gy = 40;
+  const l1bx = 30 + ROOT_W + X_GAP;
+  const l2bx = l1bx + LVL_W + X_GAP;
+  const l3bx = l2bx + LVL_W + X_GAP;
+  const l1aw = availW(l1bx);
+  const l2aw = availW(l2bx);
+  const l3aw = availW(l3bx);
 
-        // 措施节点（三列）
-        const mY = l3Y + BOX_H + GAP_Y;
-        const cols: { items: string[]; style: string; label: string }[] = [];
-        if (measures.eng.length)
-          cols.push({ items: measures.eng, style: STYLES.measure_eng, label: "工程措施" });
-        if (measures.plant.length)
-          cols.push({ items: measures.plant, style: STYLES.measure_plant, label: "植物措施" });
-        if (measures.temp.length)
-          cols.push({ items: measures.temp, style: STYLES.measure_temp, label: "临时措施" });
+  const bhs: number[] = [];
+  for (const [, l2m] of tree) bhs.push(branchH(l2m, l1aw));
+  const totalH = bhs.reduce((a, b) => a + b, 0) + (bhs.length - 1) * GROUP_GAP;
 
-        let mx = l3X;
-        for (const col of cols) {
-          // 每列一个容器
-          const containerId = nextId();
-          const containerH = col.items.length * (BOX_H + 8) + CONTAINER_PAD + 24;
+  nodes.push({ id: rid, v: "防治措施体系", s: S.root, x: 30, y: gy + totalH / 2 - ROOT_H / 2, w: ROOT_W, h: ROOT_H });
 
-          nodes.push({
-            id: containerId,
-            label: col.label,
-            style: STYLES.container,
-            x: mx,
-            y: mY,
-            w: MEASURE_COL_W,
-            h: containerH,
-          });
-          edges.push({
-            id: nextId(),
-            source: l3Id,
-            target: containerId,
-          });
+  let idx = 0;
+  for (const [l1, l2m] of tree) {
+    const bh = bhs[idx];
+    const l1id = nid();
+    nodes.push({ id: l1id, v: l1, s: S.level, x: l1bx, y: gy + bh / 2 - LVL_H / 2, w: LVL_W, h: LVL_H });
+    edges.push({ id: nid(), src: rid, tgt: l1id, s: S.edgeH });
 
-          // 容器内各措施
-          let iy = mY + 28;
-          for (const item of col.items) {
-            const itemId = nextId();
-            nodes.push({
-              id: itemId,
-              label: item,
-              style: col.style,
-              x: mx + 6,
-              y: iy,
-              w: MEASURE_COL_W - 12,
-              h: BOX_H - 8,
-            });
-            edges.push({
-              id: nextId(),
-              source: containerId,
-              target: itemId,
-            });
-            iy += BOX_H;
+    const hasL2 = l2m.size > 1 || (l2m.size === 1 && [...l2m.keys()][0] !== "__leaf__");
+    if (!hasL2) {
+      renderGroup(getLeaf(l2m.get("__leaf__") || new Map()), l2bx, gy, l1id);
+    } else {
+      let l2y = gy;
+      for (const [l2, l3m] of l2m) {
+        const l2h = branchH(new Map([[l2, l3m]]), l2aw);
+        const l2id = nid();
+        nodes.push({ id: l2id, v: l2, s: S.level, x: l2bx, y: l2y + l2h / 2 - LVL_H / 2, w: LVL_W, h: LVL_H });
+        edges.push({ id: nid(), src: l1id, tgt: l2id, s: S.edgeH });
+
+        const hasL3 = l3m.size > 1 || (l3m.size === 1 && [...l3m.keys()][0] !== "__leaf__");
+        if (!hasL3) {
+          renderGroup(getLeaf(l3m), l3bx, l2y, l2id);
+        } else {
+          let l3y = l2y;
+          for (const [l3, m] of l3m) {
+            const mh = measuresHeight(m, l3aw);
+            const l3x = l3bx;
+            const l3id = nid();
+            nodes.push({ id: l3id, v: l3, s: S.level, x: l3x, y: l3y + mh / 2 - LVL_H / 2, w: LVL_W, h: LVL_H });
+            edges.push({ id: nid(), src: l2id, tgt: l3id, s: S.edgeH });
+            renderGroup(m, l3x + LVL_W + X_GAP, l3y, l3id);
+            l3y += mh + GROUP_GAP;
           }
-
-          mx += MEASURE_COL_W + MEASURE_GAP;
         }
-
-        l3X += mw + GAP_X;
+        l2y += l2h + GROUP_GAP;
       }
-
-      l2X += l2Layout.width + GAP_X;
     }
-
-    // 更新 globalY：找到该子树最深的 y
-    const maxY = Math.max(...nodes.filter((n) => n.y > l1Y).map((n) => n.y + n.h));
-    globalY = maxY + GAP_Y * 3;
+    gy += bh + GROUP_GAP;
+    idx++;
   }
 
-  // ── 生成 XML ──────────────────────────────────────────────
-  const escXml = (s: string) =>
-    s
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+  if (hasEx) {
+    nodes.push({ id: nid(), v: "注：斜体灰色项为主体工程已列措施，其余为本方案新增措施", s: S.note, x: 30, y: gy + 16, w: 650, h: 20 });
+  }
 
-  let xml = `<?xml version="1.0" encoding="UTF-8"?>
+  const xml = [
+    ...nodes.map(n => `<mxCell id="${n.id}" value="${esc(n.v)}" style="${n.s}" vertex="1" parent="1"><mxGeometry x="${Math.round(n.x)}" y="${Math.round(n.y)}" width="${Math.round(n.w)}" height="${Math.round(n.h)}" as="geometry" /></mxCell>`),
+    ...edges.map(e => `<mxCell id="${e.id}" style="${e.s}" edge="1" source="${e.src}" target="${e.tgt}" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>`),
+  ].join("\n        ");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <mxfile host="app.diagrams.net" modified="${new Date().toISOString()}" type="device">
   <diagram id="swc-measure-system" name="措施体系图">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-`;
-
-  for (const node of nodes) {
-    xml += `        <mxCell id="${node.id}" value="${escXml(node.label)}" style="${node.style}" vertex="1" parent="1">
-          <mxGeometry x="${node.x}" y="${node.y}" width="${node.w}" height="${node.h}" as="geometry" />
-        </mxCell>\n`;
-  }
-
-  for (const edge of edges) {
-    xml += `        <mxCell id="${edge.id}" value="" style="${STYLES.edge}" edge="1" source="${edge.source}" target="${edge.target}" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>\n`;
-  }
-
-  xml += `      </root>
+        ${xml}
+      </root>
     </mxGraphModel>
   </diagram>
 </mxfile>`;
-
-  return xml;
 }
 
-/**
- * 触发浏览器下载 .drawio 文件
- */
-export function downloadDrawio(xml: string, filename = "措施体系图.drawio") {
+export async function downloadDrawio(xml: string, filename = "措施体系图.drawio") {
   const blob = new Blob([xml], { type: "application/xml" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
+  try {
+    const { save } = await import("@tauri-apps/plugin-dialog");
+    const filePath = await save({
+      defaultPath: filename,
+      filters: [{ name: "Draw.io 文件", extensions: ["drawio"] }],
+    });
+    if (filePath) {
+      const { writeFile } = await import("@tauri-apps/plugin-fs");
+      const buffer = await blob.arrayBuffer();
+      await writeFile(filePath, new Uint8Array(buffer));
+    }
+  } catch {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = filename; a.click();
+    URL.revokeObjectURL(url);
+  }
 }
